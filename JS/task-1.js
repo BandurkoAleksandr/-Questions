@@ -6,6 +6,7 @@ function initKing () {
     let kingSteps = [{ x: 0, y: 0 }];
 
     let warningBox = document.querySelector(".warning");
+    let message = '';
     let up = document.querySelector(".up");
     let down = document.querySelector(".down");
     let left = document.querySelector(".left");
@@ -30,7 +31,8 @@ function initKing () {
             for(let i = 0; i < currentIndex; i++) {
                 let iterationStep = kingSteps[i]; 
                 if (currentStep.x === iterationStep.x && currentStep.y === iterationStep.y) {
-                    console.log("Я здесь уже был!!!");
+                    message += "<p>Я здесь уже был!!!</p>";
+                    warningBox.innerHTML = message;
                 }
             }
     }
