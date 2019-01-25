@@ -3,6 +3,7 @@ let taskNumber = document.querySelectorAll('.task');
 let tasks = document.querySelector('.tasks');
 let kingTask = document.querySelector('.kingTask');
 let changeElementTask = document.querySelector('.changeElementTask');
+let combinationTask = document.querySelector('.combination');
 let backButton = document.querySelector('.back');
 
 taskNumber[0].addEventListener('click', function() {
@@ -17,6 +18,13 @@ taskNumber[1].addEventListener('click', function() {
     backButton.style.display = 'block';
     tasks.style.display = 'none';
     initNumber();
+});
+
+taskNumber[2].addEventListener('click', function() {
+    combinationTask.style.display = 'block';
+    backButton.style.display = 'block';
+    tasks.style.display = 'none';
+    initCombination();
 });
 
 
