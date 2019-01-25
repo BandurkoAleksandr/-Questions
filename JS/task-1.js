@@ -58,4 +58,4 @@ function initKing () {
         findStep();
     });
 }
-window.onload = initKing;
+// window.onload = initKing;
