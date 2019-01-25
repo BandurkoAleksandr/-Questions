@@ -28,7 +28,7 @@ function initKing () {
         let currentIndex = kingSteps.length - 1;
             let currentStep = kingSteps[currentIndex];
             console.log(currentStep);
-            for(let i = 0; i < currentIndex; i++) {
+            for (let i = 0; i < currentIndex; i++) {
                 let iterationStep = kingSteps[i]; 
                 if (currentStep.x === iterationStep.x && currentStep.y === iterationStep.y) {
                     message += "<p>Я здесь уже был!!!</p>";
@@ -58,4 +58,4 @@ function initKing () {
         findStep();
     });
 }
-window.onload = initKing;
+// window.onload = initKing;
