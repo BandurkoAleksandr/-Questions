@@ -31,6 +31,7 @@ taskNumber[2].addEventListener('click', function() {
 backButton.addEventListener('click', function() {
     kingTask.style.display = 'none';
     changeElementTask.style.display = 'none';
+    combinationTask.style.display = 'none';
     backButton.style.display = 'none';
     tasks.style.display = 'block';
 });
