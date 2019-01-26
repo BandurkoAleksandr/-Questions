@@ -14,7 +14,7 @@ function initCombination () {
     }
     separateLetter(arrayOfLetters);
     // console.log(currentCombination);
-    console.log(resultOfCombinations);
+    // console.log(resultOfCombinations);
 
     // function allPosibleCombinations (arr) {
 

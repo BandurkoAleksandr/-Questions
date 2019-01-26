@@ -24,7 +24,7 @@ function initKing () {
     }
     let currentKingStep = step;
 
-    function findStep () {
+    function findStep (steps) {
         let currentIndex = kingSteps.length - 1;
             let currentStep = kingSteps[currentIndex];
             console.log(currentStep);
@@ -40,22 +40,22 @@ function initKing () {
 
     up.addEventListener("click", function() {
         kingSteps.push(currentKingStep(0, 10));
-        findStep();
+        findStep(kingSteps);
     });
 
     down.addEventListener("click", function() {
         kingSteps.push(currentKingStep(0, -10));
-        findStep();
+        findStep(kingSteps);
     });
 
     left.addEventListener("click", function() {
         kingSteps.push(currentKingStep(-10, 0));
-        findStep();
+        findStep(kingSteps);
     });
 
     right.addEventListener("click", function() {
         kingSteps.push(currentKingStep(10, 0));
-        findStep();
+        findStep(kingSteps);
     });
 }
 // window.onload = initKing;
