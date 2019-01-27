@@ -25,11 +25,11 @@ function initKing () {
     let currentKingStep = step;
 
     function findStep (steps) {
-        let currentIndex = kingSteps.length - 1;
-            let currentStep = kingSteps[currentIndex];
+        let currentIndex = steps.length - 1;
+            let currentStep = steps[currentIndex];
             console.log(currentStep);
             for (let i = 0; i < currentIndex; i++) {
-                let iterationStep = kingSteps[i]; 
+                let iterationStep = steps[i]; 
                 if (currentStep.x === iterationStep.x && currentStep.y === iterationStep.y) {
                     message += "<p>Я здесь уже был!!!</p>";
                     warningBox.innerHTML = message;
