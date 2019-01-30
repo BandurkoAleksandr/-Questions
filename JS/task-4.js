@@ -13,11 +13,11 @@ function initLuckyNumber () {
 // the second cycle goes through all the numbers in the range 
 // from minimum to maximum (passed arguments),
 // finds sum of the digits of which the number consists (nested cycle)
-// and increment value of cell which is equal to sum 
+// and increment value of cell which is equal to sum - 1
 // 
 // at the end we call the nested function twice
 // first time with the left side of the arguments of the parent function
-// second time with right side of the arguments
+// second time with the right side of the arguments
 // then in the cycle multiply the results of call
 // and the result of each iteration is summarized with the previous one.(RESULT!!!)
     function findNumbersQuantity (min, max) {

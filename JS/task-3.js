@@ -3,7 +3,8 @@ function initCombination () {
     let arrayOfLetters = ['a', 'b', 'c'];
     let resultOfCombinations = [];
     let template = '';
-
+// TODO look at Lesha's code
+//      rewrite code, do it more simple
     function separateLetter (arr) {
         for (let i = 0; i < arr.length; i++) {
             let currentCombination = ['0'];
