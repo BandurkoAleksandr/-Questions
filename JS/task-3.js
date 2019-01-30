@@ -1,5 +1,5 @@
 function initCombination () {
-    let combinationTask = document.querySelector('.combinationTask');
+    let combinationTask = document.querySelector('.combination-task');
     let arrayOfLetters = ['a', 'b', 'c'];
     let resultOfCombinations = [];
     let template = '';

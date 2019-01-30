@@ -1,7 +1,7 @@
 function initNumber () {
     
     let arrayOfNumbers = [4,2,3,5,4,3,4,6,5,4,3,1,4];
-    let elementTask = document.querySelector('.changeElementTask');
+    let elementTask = document.querySelector('.change-element-task');
     let incomingData = arrayOfNumbers.map(function(index) {
         return index;
     });
