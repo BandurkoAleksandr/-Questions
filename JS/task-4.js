@@ -5,7 +5,21 @@ function initLuckyNumber () {
     let finishNumberInput = document.querySelector('.finish-number-input');
     let startNumberButton = document.querySelector('.start-number-button');
     let target = document.querySelector('.target');
-
+// fn (findNumbersQuantity) takes two arguments: minimum and maximum N-digit numbers
+// each number is separated into two equal parts, 
+// then nested fn (findSumOfHalf) takes first or second parts of both numbers (two arguments)
+// nested fn creates an array whose length is equal to the maximum sum of numbers N/2
+// and assigns each cell a value of 0 (first cycle)
+// the second cycle goes through all the numbers in the range 
+// from minimum to maximum (passed arguments),
+// finds sum of the digits of which the number consists (nested cycle)
+// and increment value of cell which is equal to sum 
+// 
+// at the end we call the nested function twice
+// first time with the left side of the arguments of the parent function
+// second time with right side of the arguments
+// then in the cycle multiply the results of call
+// and the result of each iteration is summarized with the previous one.(RESULT!!!)
     function findNumbersQuantity (min, max) {
         let halfDigitLength = max.toString().split('').map(function (i){ return +i; }).length / 2;
         let minLeft = +min.toString().slice(0, halfDigitLength);

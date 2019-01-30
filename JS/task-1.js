@@ -36,8 +36,7 @@ function initKing () {
                 }
             }
     }
-
-
+    
     up.addEventListener("click", function() {
         kingSteps.push(currentKingStep(0, 10));
         findStep(kingSteps);
