@@ -51,7 +51,6 @@ function initLuckyNumber () {
         } 
         target.innerHTML = result;
     }
-
     startNumberButton.addEventListener('click', function () {
         let startNumber = +startNumberInput.value;
         let finishNumber = +finishNumberInput.value;
