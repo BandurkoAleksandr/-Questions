@@ -2,7 +2,7 @@
 let taskDetails = document.querySelectorAll('.task-details');
 let tasks = document.querySelector('.tasks');
 let backButton = document.querySelector('.back');
-let initTasks = [initKing, initNumber, initCombination, initQ13];
+let initTasks = [initKing, initNumber, initCombination, initLuckyNumber];
 
 tasks.addEventListener('click', function(e) {
     // console.log(e.target.getAttribute('i'));
