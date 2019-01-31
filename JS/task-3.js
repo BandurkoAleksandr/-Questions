@@ -3,45 +3,40 @@ function initCombination () {
     let arrayOfLetters = ['a', 'b', 'c'];
     let resultOfCombinations = [];
     let template = '';
-// TODO look at Lesha's code
-//      rewrite code, do it more simple
-    function separateLetter (arr) {
-        for (let i = 0; i < arr.length; i++) {
-            let currentCombination = ['0'];
-            currentCombination.splice(0, 1, arr[i]);
-            resultOfCombinations.push(currentCombination);
+// fn combinator takes two arguments
+// at first time:
+// first argument is empty array, or empty string
+// second argument  is array, it is required.
+// (if the function called with only second argument
+// it will be work and first argument 
+// will be assigned automatically)
+// Then in the body of the cycle 
+// declare two variables, which will be used 
+// as arguments for the recursive call of combinator.
+// first variable is a string, that concatenates itself
+// and the element of the stock array
+// second variable is an object which 
+// consists of a copy(stock array - current element) => (every iteration)
+
+    function combinator (arr1, arr2) {
+        if (arr2 == undefined || arr2 == "") {
+            arr2 = arr1;
+            arr1 = "";
         }
-        for (let j = 0; j < arr.length; j++) {
-            let currentCombination = arr.slice(0);
-            let reverseCurrentCombination;
-            currentCombination.splice(j, 1);
-            resultOfCombinations.push(currentCombination);
-            reverseCurrentCombination = currentCombination.slice(0).reverse();
-            resultOfCombinations.push(reverseCurrentCombination);
-        }
-        return resultOfCombinations;
-    }
-
-    function concatLetters (arr) {
-        let separateLetters = arr.slice(0);
-        let j;
-        for (let i = 0; i < separateLetters.length; i++) {
-
-            for (j = i + 1; j < separateLetters.length; j++) {
-                let x = separateLetters[i];
-                let y = separateLetters[j];
-
-                if (y.length > x.length && y.indexOf(x[0], 0) === -1) {
-                let b = x.concat(y);
-                arr.push(b);
-              }
+        for (let i = 0; i < arr2.length; i++) {
+            let firstArg = arr1 + arr2[i];
+            let secondArg = arr2.slice(0,i).concat(arr2.slice(i + 1));
+            resultOfCombinations.push(firstArg);
+            // console.log(typeof(arr2[i]));
+            // console.log(typeof(arr1));
+            // console.log(firstArg);
+            // console.log(secondArg);
+            if (firstArg.length != arr1.length + arr2.length) {
+                combinator(firstArg, secondArg);
             }
-          }
-        return arr;
+        }
     }
-
-    separateLetter(arrayOfLetters);
-    concatLetters(resultOfCombinations);
+    combinator(arrayOfLetters);
     
     for (let i = 0; i < resultOfCombinations.length; i++) {
     

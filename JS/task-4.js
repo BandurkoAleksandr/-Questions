@@ -46,6 +46,7 @@ function initLuckyNumber () {
         }  
         let leftSum = findSumOfHalf(minLeft, maxLeft);
         let rightSum = findSumOfHalf(minRight, maxRight);  
+        
         for (let i = 0; i < leftSum.length; i++) {
             result += leftSum[i] * rightSum[i];
         } 

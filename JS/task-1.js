@@ -45,7 +45,7 @@ function initKing () {
     // when the button is clicked, event handlers
     // push currentKingStep function call result 
     // into kingSteps array 
-    // and call findStep function with kingSteps argument
+    // and call findStep function with kingSteps array argument
     up.addEventListener("click", function() {
         kingSteps.push(currentKingStep(0, 10));
         findStep(kingSteps);
