@@ -1,7 +1,7 @@
  function initNumber () {
     
     let arrayOfNumbers = [4,2,3,5,4,3,4,6,5,4,3,1,4];
-    let elementTask = document.querySelector('.change-element-task');
+    let warningBox = document.querySelector('.warning-2');
     let incomingData = arrayOfNumbers.map(function(index) {
         return index;
     });
@@ -24,10 +24,11 @@
     }
     changeNumber(arrayOfNumbers);
     
-    elementTask.innerHTML = '<p>Incoming data: ' + incomingData + '.</p>' + '<p>Result: ' + arrayOfNumbers + '.</p>';
+    warningBox.innerHTML = '<p>Incoming data: ' + incomingData + '.</p>' + '<p>Result: ' + arrayOfNumbers + '.</p>';
 
 }
 // window.onload = initNumber;
+
 
 
 

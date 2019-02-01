@@ -7,7 +7,7 @@ function initKing () {
     // gets all coordinates: currentKingStep function call result
     let kingSteps = [{ x: 0, y: 0 }];
 
-    let warningBox = document.querySelector(".warning");
+    let warningBox = document.querySelector(".warning-1");
     let message = '';
     // get buttons
     let up = document.querySelector(".up");

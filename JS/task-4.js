@@ -1,10 +1,9 @@
 function initLuckyNumber () {
 
-    let luckyNumberTask = document.querySelector('.lucky-number-task');
     let startNumberInput = document.querySelector('.start-number-input');
     let finishNumberInput = document.querySelector('.finish-number-input');
     let startNumberButton = document.querySelector('.start-number-button');
-    let target = document.querySelector('.target');
+    let warningBox = document.querySelector('.warning-4');
 // fn (findNumbersQuantity) takes two arguments: minimum and maximum N-digit numbers
 // each number is separated into two equal parts, 
 // then nested fn (findSumOfHalf) takes first or second parts of both numbers (two arguments)
@@ -50,7 +49,7 @@ function initLuckyNumber () {
         for (let i = 0; i < leftSum.length; i++) {
             result += leftSum[i] * rightSum[i];
         } 
-        target.innerHTML = result;
+        warningBox.innerHTML = result;
     }
     startNumberButton.addEventListener('click', function () {
         let startNumber = +startNumberInput.value;

@@ -1,5 +1,5 @@
 function initCombination () {
-    let combinationTask = document.querySelector('.combination-task');
+    let warningBox = document.querySelector('.warning-3');
     let arrayOfLetters = ['a', 'b', 'c'];
     let resultOfCombinations = [];
     let template = '';
@@ -27,16 +27,20 @@ function initCombination () {
             let firstArg = arr1 + arr2[i];
             let secondArg = arr2.slice(0,i).concat(arr2.slice(i + 1));
             resultOfCombinations.push(firstArg);
-            // console.log(typeof(arr2[i]));
-            // console.log(typeof(arr1));
-            // console.log(firstArg);
-            // console.log(secondArg);
+            // if as a result we need an array of arrays =>
+            // let arr = [];
+            // for (let j = 0; j < firstArg.length; j++){
+            //     arr[j] = firstArg[j];
+            // }
+            // resultOfCombinations.push(arr);
+            
             if (firstArg.length != arr1.length + arr2.length) {
                 combinator(firstArg, secondArg);
             }
         }
     }
     combinator(arrayOfLetters);
+    // console.log(resultOfCombinations);
     
     for (let i = 0; i < resultOfCombinations.length; i++) {
     
@@ -46,5 +50,5 @@ function initCombination () {
             template += '[' + resultOfCombinations[i] + '],';
         }
     }
-    combinationTask.innerHTML = '<p>Incoming data: ' + '[' + arrayOfLetters + ']' + '.</p>' + '<p>Result: ' + '[' + template + ']' + '.</p>';
+    warningBox.innerHTML = '<p>Incoming data: ' + '[' + arrayOfLetters + ']' + '.</p>' + '<p>Result: ' + '[' + template + ']' + '.</p>';
 }
