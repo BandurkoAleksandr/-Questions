@@ -3,6 +3,7 @@ function initCombination () {
     let arrayOfLetters = ['a', 'b', 'c'];
     let resultOfCombinations = [];
     let template = '';
+// Task q14
 // fn combinator takes two arguments
 // at first time:
 // first argument is empty array, or empty string

@@ -20,17 +20,20 @@ function initLuckyNumber () {
 // then in the cycle multiply the results of call
 // and the result of each iteration is summarized with the previous one.(RESULT!!!)
     function findNumbersQuantity (min, max) {
-        let halfDigitLength = max.toString().split('').map(function (i){ return +i; }).length / 2;
-        let minLeft = +min.toString().slice(0, halfDigitLength);
-        let minRight = +min.toString().slice(halfDigitLength);
-        let maxLeft = +max.toString().slice(0, halfDigitLength);
-        let maxRight = +max.toString().slice(halfDigitLength);
+        let halfDigitLength = max.toString().length / 2;
+        let minString = min.toString();
+
+        let minLeft = minString.slice(0, halfDigitLength);
+        let minRight = minString.slice(halfDigitLength);
+        let maxLeft = max.toString().slice(0, halfDigitLength);
+        let maxRight = max.toString().slice(halfDigitLength);
         let result = 0;
         
-        function findSumOfHalf (minHalf, maxHalf) {
-            let arrLength = 9 * maxHalf.toString().length
-            let arr = [];
-            for (let i = 0; i < arrLength; i++) {
+        function findSumOfHalf (minHalf, maxHalf, arr) {
+            let arrLength = 9 * maxHalf.toString().length;
+            console.log(minHalf, maxHalf, arr);
+            arr = arr || [];
+            for (let i = arr.length; i < arrLength; i++) {
                 arr[i] = 0;
             }
             for (let i = minHalf; i <= maxHalf; i++) {
@@ -42,9 +45,12 @@ function initLuckyNumber () {
                     arr[sum - 1] += 1;
             }
             return arr;
-        }  
+        }
+        // exsample: 100 - 999  
         let leftSum = findSumOfHalf(minLeft, maxLeft);
-        let rightSum = findSumOfHalf(minRight, maxRight);  
+        let rightSum = leftSum.slice(0);
+        // exsample: 000 - (100 - 1); 
+        findSumOfHalf(minRight, minLeft - 1, rightSum);  
         
         for (let i = 0; i < leftSum.length; i++) {
             result += leftSum[i] * rightSum[i];
