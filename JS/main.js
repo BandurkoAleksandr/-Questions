@@ -1,62 +1,26 @@
-window.onload = function() {
+let taskDetails = document.querySelectorAll('.task-details');
+let tasks = document.querySelector('.tasks');
+let backButton = document.querySelector('.back');
+let initTasks = [initKing, initNumber, initCombination, initLuckyNumber];
 
-let kingStep = {
-    x: 0,
-    y: 0
-}
-let kingSteps = [{ x: 0, y: 0 }];
-
-let warningBox = document.querySelector(".warning");
-let up = document.querySelector(".up");
-let down = document.querySelector(".down");
-let left = document.querySelector(".left");
-let right = document.querySelector(".right");
-
-let step = (function(directionX, directionY) {
-    kingStep.x = kingStep.x + directionX;
-    kingStep.y = kingStep.y + directionY;
-
-    let newStep = {
-        x: kingStep.x,
-        y: kingStep.y
-    }
-    return newStep;
-});
-let currentKingStep = step;
-
-let findStep = (function() {
-    let currentIndex = kingSteps.length - 1;
-    if (kingSteps.length > 1) {
-        let currentStep = kingSteps[currentIndex];
-
-        for(let i = 0; i < currentIndex; i++) {
-            let iterationStep = kingSteps[i]; 
-            if (currentStep.x === iterationStep.x && currentStep.y === iterationStep.y) {
-                console.log("Я здесь уже был!!!");
-            }
+tasks.addEventListener('click', function(e) {
+    for (let i = 0; i < taskDetails.length; i++) {
+        if (+e.target.getAttribute('i') == i) {
+            index = e.target.getAttribute('i');
+            taskDetails[index].style.display = 'block';
+            backButton.style.display = 'block';
+            tasks.style.display = 'none';
+            initTasks[i]();
         }
     }
 });
 
-
-up.addEventListener("click", function() {
-    kingSteps.push(currentKingStep(0, 10));
-    findStep();
+backButton.addEventListener('click', function() {
+    for (let i = 0; i < taskDetails.length; i++) {
+        taskDetails[i].style.display = 'none';
+    }
+    backButton.style.display = 'none';
+    tasks.style.display = 'block';
 });
 
-down.addEventListener("click", function() {
-    kingSteps.push(currentKingStep(0, -10));
-    findStep();
-});
 
-left.addEventListener("click", function() {
-    kingSteps.push(currentKingStep(-10, 0));
-    findStep();
-});
-
-right.addEventListener("click", function() {
-    kingSteps.push(currentKingStep(10, 0));
-    findStep();
-});
-
-}

@@ -6,17 +6,79 @@
             content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible"
             content="ie=edge">
-        <title>Q 18</title>
+        <title>Questions</title>
+        <link rel="stylesheet" href="CSS/CSS.css">
     </head>
 
     <body>
-        <div class="buttons">
+        <div class="tasks">
+            <button class="task" i="0">Task 1</button>
+            <button class="task" i="1">Task 2</button>
+            <button class="task" i="2">Task 3</button>
+            <button class="task" i="3">Task 4</button>
+        </div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    Одинокий король долго ходил по бесконечной шахматной доске.<br>
+                    Известна последовательность из N его ходов (вверх, вниз, влево, вправо, вверх-влево и т.п.).<br>												
+                    Написать программу, определяющую побывал ли король дважды на одном и том же поле<br>
+                    за минимально возможное при заданном N число вычислений.												
+                </p>
+            </details>
             <button class="up">UP</button>
             <button class="down">DOWN</button>
             <button class="left">LEFT</button>
             <button class="right">RIGHT</button>
+            <div class="warning-1"></div>
         </div>
-        <div class="warning"></div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    В таблице А размера N за один просмотр необходимо<br>
+                    каждый элемент заменить на ближайший следующий за ним элемент,<br>
+                    который больше его. Если такого элемента нет, то заменить его на ноль.<br> 
+                    Можно использовать дополнительную память.												
+                </p>
+            </details>
+            <div class="warning-2"></div>
+        </div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    Написать программу составления всех возможных комбинаций из элементов массива. 								 
+                </p>
+            </details>
+            <div class="warning-3"></div>
+        </div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    Написать программу определения количества N-значных чисел, у которых сумма первых N/2 цифр равна сумме N/2 последних цифр.												
+                </p>
+            </details>
+            <input type="number"
+                   min="0"
+                   class="start-number-input"
+                   placeholder="Enter a start number">
+            <input type="number"
+                   min="0"
+                   class="finish-number-input"
+                   placeholder="Enter a finish number">
+            <button class="start-number-button">
+                Enter
+            </button>
+            <div class="warning-4"></div>
+        </div>
+        <button class="back">Back</button>
+        <script src="JS/task-1.js"></script>
+        <script src="JS/task-2.js"></script>
+        <script src="JS/task-3.js"></script>
+        <script src="JS/task-4.js"></script>
         <script src="JS/main.js"></script>
     </body>
 </html>
