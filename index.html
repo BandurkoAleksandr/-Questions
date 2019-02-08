@@ -16,6 +16,8 @@
             <button class="task" i="1">Task 2</button>
             <button class="task" i="2">Task 3</button>
             <button class="task" i="3">Task 4</button>
+            <button class="task" i="4">Task 5</button>
+            <button class="task" i="5">Task 6</button>
         </div>
         <div class="task-details">
             <details>
@@ -63,10 +65,12 @@
             </details>
             <input type="number"
                    min="0"
+                   name="start-number"
                    class="start-number-input"
                    placeholder="Enter a start number">
             <input type="number"
                    min="0"
+                   name="finish-number"
                    class="finish-number-input"
                    placeholder="Enter a finish number">
             <button class="start-number-button">
@@ -74,11 +78,51 @@
             </button>
             <div class="warning-4"></div>
         </div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    Вводится N слов. Можно ли их переупорядочить так, чтобы получилась "цепочка"<br>
+                    т.е. для каждого слова его первая буква должна совпадать с последней буквой предыдущего слова,<br>
+                    соответственно последняя буква последнего слова должна совпадать с первой буквой первого слова.<br>
+                    Дать ответ в виде "Можно"\"Нельзя".<br>									
+                    Если такое упорядочение возможно, то вывести какую-нибудь цепочку слов.	
+                </p>
+            </details>
+            <input type="text"
+                   name="words-combination"
+                   size="45"
+                   class="words-for-combination"
+                   placeholder="Enter words separated by comma and space.">
+            <button class="button-for-words-combination">
+                Enter
+            </button>
+            <div class="warning-5"></div>
+        </div>
+        <div class="task-details">
+            <details>
+                <summary>Task description</summary>
+                <p lang="ru">
+                    Дана конечная последовательность,<br> 
+                    состоящая из левых и правых скобок pазличных типов "()","[]","{}".<br> 
+                    Определить являеться ли верной последовательность открытия/закрытия скобок в выражении.<br>	
+                    ПРИМЕР:<br>
+                    ВЕРНО: ( [ (( {} )) ] )<br>
+                    НЕВЕРНО: ([))]	
+	
+                </p>
+            </details>
+            <div class="warning-6">
+                
+            </div>
+        </div>
         <button class="back">Back</button>
         <script src="JS/task-1.js"></script>
         <script src="JS/task-2.js"></script>
         <script src="JS/task-3.js"></script>
         <script src="JS/task-4.js"></script>
+        <script src="JS/task-5.js"></script>
+        <script src="JS/task-6.js"></script>
         <script src="JS/main.js"></script>
     </body>
 </html>
