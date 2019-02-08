@@ -12,31 +12,35 @@ function initSequenceOfBrackets () {
         let clearString = '';
         
         for (let i = 0; i < str.length; i++) {
-            let bracket = str.charCodeAt(i);
-            if (bracket == 40 || bracket == 41 || bracket == 91 || bracket == 93 || bracket == 123 || bracket == 125) {
-                clearString += str.charAt(i);
+            let bracket = str.charAt(i);
+            if (bracket == '(' || bracket == ')' || bracket == '[' || bracket == ']' || bracket == '{' || bracket == '}') {
+                clearString += bracket;
             }
         }
         return clearString;
     }
-
+// очередная попытка что то упростить... 
+// поменял юникод на символы.
+// отказался от массива.
+// узнать что если строка будет формата ({[((){})]})???
+// спросить может в первой функции лучше возвращать массив скобок, а не строку...
     function sequenceOfBrackets (fn) {
         let str = fn;
         let left = 0;
+        let strLeft = str.charAt(left);
         let right = str.length - 1;
+        let strRight = str.charAt(right);
         let result = '';
-
+        
         for (let i = 0; i < str.length / 2; i++) {
-            if (str.charCodeAt(left) == 40 && str.charCodeAt(right) == 41) {
+            
+            if (strLeft == '(' && strRight == ')') {
                 left++;
                 right--;
-            } else if (str.charCodeAt(left) == 91 && str.charCodeAt(right) == 93) {
+            } else if (strLeft == '[' && strRight == ']') {
                 left++;
                 right--;
-            } else if (str.charCodeAt(left) == 123 && str.charCodeAt(right) == 125) {
-                left++;
-                right--;
-            } else if (str.charCodeAt(left) == 32 && str.charCodeAt(right) == 32) {
+            } else if (strLeft == '{' && strRight == '}') {
                 left++;
                 right--;
             } else {
