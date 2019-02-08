@@ -1,7 +1,7 @@
 let taskDetails = document.querySelectorAll('.task-details');
 let tasks = document.querySelector('.tasks');
 let backButton = document.querySelector('.back');
-let initTasks = [initKing, initNumber, initCombination, initLuckyNumber, initWordFilter, initSequenceOfBrackets];
+let initTasks = [initKing, initNumber, initCombination, initLuckyNumber, initWordFilter, initSequenceOfBrackets, initPrimeNumber];
 
 tasks.addEventListener('click', function(e) {
     for (let i = 0; i < taskDetails.length; i++) {

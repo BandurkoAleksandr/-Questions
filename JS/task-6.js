@@ -3,10 +3,25 @@ function initSequenceOfBrackets () {
 // TODO 
 // уточнить насчет пробелов...
 // если есть пробелы только с одной из сторон их учитывать при сравнении или просто удалять?
+// уточнил, считаем только скобочки на все остальное не обращаем внимания
+// переделал код, добавил функцию нахождения "чистой строки"
     let warningBox = document.querySelector('.warning-6');
-    let stringOfBrackets = '( [ (( {} )) ] )';
+    let stringOfBrackets = '(y [ (b( {} )hjk) ] l)';
 
-    function sequenceOfBrackets (str) {
+    function getArrOfBrackets (str) {
+        let clearString = '';
+        
+        for (let i = 0; i < str.length; i++) {
+            let bracket = str.charCodeAt(i);
+            if (bracket == 40 || bracket == 41 || bracket == 91 || bracket == 93 || bracket == 123 || bracket == 125) {
+                clearString += str.charAt(i);
+            }
+        }
+        return clearString;
+    }
+
+    function sequenceOfBrackets (fn) {
+        let str = fn;
         let left = 0;
         let right = str.length - 1;
         let result = '';
@@ -27,15 +42,18 @@ function initSequenceOfBrackets () {
             } else {
                 return result = 'wrong sequence';
             }
-            
         }
         return result = 'all chiki-puki';
-
     }
-    let fnResult = sequenceOfBrackets(stringOfBrackets);
 
+    let fnResult = sequenceOfBrackets(getArrOfBrackets(stringOfBrackets));
+ 
     warningBox.innerHTML = '<p>Incoming data: ' + stringOfBrackets + '.</p>' + '<p>Result: ' + fnResult + '.</p>';
-    // console.log(sequenceOfBrackets(stringOfBrackets));
-    // console.log(sequenceOfBrackets(stringOfBrackets).charCodeAt(1));
-    // console.log(sequenceOfBrackets(stringOfBrackets).charCodeAt(sequenceOfBrackets(stringOfBrackets).length - 1));
 }
+
+
+
+
+
+
+

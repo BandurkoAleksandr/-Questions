@@ -1,5 +1,5 @@
 function initWordFilter () {
-
+// Task q19
     let warningBox = document.querySelector('.warning-5');
     let wordsCombinationInput = document.querySelector('.words-for-combination');
     let wordsCombinationButton = document.querySelector('.button-for-words-combination');
