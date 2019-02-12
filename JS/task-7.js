@@ -3,7 +3,6 @@ function initPrimeNumber () {
 // n - количество простых чисел, которые нужно найти
     let warningBox = document.querySelector('.warning-7');
 // TODO попытаться найти способ оптимизировать поиск
-// вывести результаты в виде списка...
     function primeNumber (n) {
         let arrOfPrimeNumbers = [];
 
@@ -21,6 +20,14 @@ function initPrimeNumber () {
             }
         }
     }
-    console.log(primeNumber(100));
+    // выводим результаты в виде списка...
+    let result = primeNumber(100);
+    let template = '';
 
+    for (let i = 0; i < result.length; i++) {
+    
+        template += '<li> -- ' + result[i] + '</li>';
+
+    }
+    warningBox.innerHTML = '<ol>' + template + '</ol>';
 }
