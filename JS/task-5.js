@@ -3,33 +3,52 @@ function initWordFilter () {
     let warningBox = document.querySelector('.warning-5');
     let wordsCombinationInput = document.querySelector('.words-for-combination');
     let wordsCombinationButton = document.querySelector('.button-for-words-combination');
-    let arrayOfWords = [];
-// TODO try sort!!!
-// не вышло...
-// попробую позже...
-    function wordFilter (a, b) {
-        let lastSimbol = a.length - 1;
-        console.log(a.charAt(lastSimbol));
-        console.log(b.charAt(0));
-        console.log(a);
-        console.log(b);
-        if (a.charAt(lastSimbol) == b.charAt(0)) {
-            return -1;
+    
+// TODO пересмотреть код, 
+// переписать последнюю проверку на читаемый код!
+// проверить код, что если будет строка типа аб, бв, вд, дб, бс, са как код поведет себя?
+// оптимизировать код, если нужно переписать!!!
+    function wordFilter (arr) {
+        let resultArr = [];
+        resultArr.push(arr[arr.length - 1]);
+        arr.splice(arr.length - 1);
+        let result = '';
+        
+        function subWordFilter () {
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr);
+                console.log(resultArr);
+                let currentWord = resultArr[resultArr.length - 1];
+                console.log(currentWord);
+                console.log(currentWord.length);
+                let lastSimbol = currentWord.length - 1;
+                console.log(lastSimbol);
+                console.log(currentWord[lastSimbol]);
+                console.log(arr[i][0]);
+                if (currentWord[lastSimbol] == arr[i][0]) {
+                    resultArr.push(arr[i]);
+                    arr.splice(i, 1);
+                    subWordFilter();
+                }
+                
+            }
+            return resultArr;
         }
-        if (a.charAt(lastSimbol) != b.charAt(0)) {
-            return 1;
+        subWordFilter();
+        if  (resultArr[0][0] == resultArr[resultArr.length - 1][resultArr[resultArr.length - 1].length - 1]) {
+            return result = 'da';
         }
+        return resultArr;
     }
-
-    // console.log(arrayOfWords.sort(wordFilter));
+   
     
 
 // TODO написать проверки инпута и приступать к написанию основной функции!!!
     wordsCombinationButton.addEventListener('click', function () {
         let stringOfWords = wordsCombinationInput.value;
-        arrayOfWords = stringOfWords.split(', ');
+        let arrayOfWords = stringOfWords.split(', ');
         wordsCombinationInput.value = '';
-        console.log(arrayOfWords.sort(wordFilter));
+        console.log(wordFilter(arrayOfWords));
     });
 
 }

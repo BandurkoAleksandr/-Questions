@@ -28,7 +28,7 @@ function initIsPeriodicSequence () {
         }
         // получаем слово из которого должна состоять последовательность
         let word = str.substring(0, wordLength); 
-        // получаем массив состоящих из пустых ячеек и инородных слов
+        // получаем массив состоящий из пустых ячеек и инородных слов
         let arr = str.split(word);
         console.log(word);
         console.log(arr);
